@@ -147,14 +147,14 @@ class SnakeGame:
         self.game_window.blit(text,[0,0])
         pygame.display.flip()
     
-    def collision(self, pt=None):
-        if pt is None:
-            pt = self.snake_pos
-        if self.pt[0] < 0 or self.pt[0] > self.w-10:
+    def collision(self, pos=None):
+        if pos is None:
+            pos = self.snake_pos
+        if self.pos[0] < 0 or self.pos[0] > self.w-10:
             return True
-        if self.pt[1] < 0 or self.pt[1] > self.h-10:
+        if self.pos[1] < 0 or self.pos[1] > self.h-10:
             return True
-        if self.pt in self.snake_body[1:]:
+        if self.pos in self.snake_body[1:]:
             return True
         
         return False
